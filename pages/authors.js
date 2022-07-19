@@ -11,23 +11,21 @@ export default function ViewAuthors() {
   const getAllAuthors = () => {
     getAuthors(user.uid).then(setAuthors);
   };
-
   useEffect(() => {
     getAllAuthors();
-  }, []);
+  }, [user]);
 
   return (
-    <>
-      <div className="text-center my-4">
-        <Link href="/author/newAuthor" passHref>
-          <Button>Add A Book</Button>
-        </Link>
-        <div className="d-flex flex-wrap">
-          {authors.map((author) => (
-            <AuthorCard key={author.firebaseKey} bookObj={author} onUpdate={getAllAuthors} />
-          ))}
-        </div>
+    <div className="text-center my-4">
+      <Link href="/author/newAuthor" passHref>
+        <Button>Add A Author</Button>
+      </Link>
+      <div className="d-flex flex-wrap">
+        {authors.map((author) => (
+          <AuthorCard key={author.firebaseKey} authorObj={author} onUpdate={getAllAuthors} />
+        ))}
       </div>
-    </>
+    </div>
+
   );
 }
