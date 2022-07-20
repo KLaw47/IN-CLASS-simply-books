@@ -16,7 +16,15 @@ export default function ViewAuthorDetails() {
   return (
     <div className="mt-5 d-flex flex-wrap">
       <div className="d-flex flex-column">
-        <img src={authorDetails.image} alt={authorDetails.firstName} style={{ width: '300px' }} />
+        <div className="text-white ms-5 details">
+          <h5>
+            {authorDetails.first_name} {authorDetails.last_name}
+            <p>{authorDetails.email}
+              {authorDetails.favorite ? ' 🤍' : ''}
+            </p>
+          </h5>
+
+        </div>
       </div>
     </div>
   );

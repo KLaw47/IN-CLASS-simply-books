@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 export default function User(
 
   {
-    name, email, img, lastLogin,
+    name, email, image, lastLogin,
   },
 
 ) {
@@ -13,7 +13,7 @@ export default function User(
     <>
       <div>Name: {name}</div>
       <div>Email: {email}</div>
-      <img src={img} alt={name} />
+      <img src={image} alt={name} />
       <div>Last Login: {lastLogin}</div>
     </>
   );
@@ -22,13 +22,13 @@ export default function User(
 User.propTypes = {
   name: PropTypes.string,
   email: PropTypes.string,
-  img: PropTypes.string,
+  image: PropTypes.string,
   lastLogin: PropTypes.string,
 };
 
 User.defaultProps = {
   name: 'beans',
   email: 'beans@beans.com',
-  img: 'https://www.ixpap.com/images/2022/03/Anime-Waifu-Wallpaper.jpg',
+  image: 'https://www.ixpap.com/images/2022/03/Anime-Waifu-Wallpaper.jpg',
   lastLogin: 'yesterday',
 };

@@ -19,7 +19,7 @@ export default function ViewAuthors() {
   return (
     <div className="text-center my-4">
       <Link href="/author/newAuthor" passHref>
-        <Button>Add A Author</Button>
+        <Button>Add An Author</Button>
       </Link>
       <div className="d-flex flex-wrap">
         {authors.map((author) => (
