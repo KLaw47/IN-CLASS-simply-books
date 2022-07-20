@@ -22,6 +22,7 @@ export default function ViewAuthorDetails() {
             <p>{authorDetails.email}
               {authorDetails.favorite ? ' 🤍' : ''}
             </p>
+            <hr />
           </h5>
 
         </div>
