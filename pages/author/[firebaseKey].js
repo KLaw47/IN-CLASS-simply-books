@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { viewAuthorDetails } from '../../api/mergedData';
+import BookCard from '../../components/BookCard';
 
 export default function ViewAuthorDetails() {
   const [authorDetails, setAuthorDetails] = useState({});
@@ -19,10 +20,13 @@ export default function ViewAuthorDetails() {
         <div className="text-white ms-5 details">
           <h5>
             {authorDetails.first_name} {authorDetails.last_name}
-            <p>{authorDetails.email}
+            <p>Author Email: {authorDetails.email}
               {authorDetails.favorite ? ' 🤍' : ''}
             </p>
             <hr />
+            {authorDetails.books?.map((book) => (
+              <BookCard key={book.firebaseKey} bookObj={book} />
+            ))}
           </h5>
 
         </div>
